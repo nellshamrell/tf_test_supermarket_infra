@@ -5,23 +5,23 @@ driver:
 provisioner:
   name: terraform
   variable_files:
-    - testing.tfvars
+    - terraform.tfvars
 
 platforms:
   - name: ubuntu
 
 transport:
   name: ssh
-  ssh_key: ~/.ssh/nshamrell-staging.pem
+  ssh_key: ~/.aws/nshamrell-staging.pem
 
 verifier:
   name: terraform
   format: doc
   groups:
-  - name: chef-server
+  - name: default
     tests:
-      - chef-sever
-    hostnames: aws_hostnames
+      - chef_server
+    hostnames: chef_server_hostname
     username: ubuntu
 
 
