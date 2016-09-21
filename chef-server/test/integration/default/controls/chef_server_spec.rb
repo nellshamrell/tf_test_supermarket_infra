@@ -5,3 +5,7 @@ end
 describe file('/var/chef/cache') do
   it { should be_directory }
 end
+
+describe file('/var/chef') do
+  it { should be_owned_by 'ubuntu' }
+end

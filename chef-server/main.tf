@@ -13,7 +13,8 @@ resource "aws_instance" "chef-server" {
 
   provisioner "remote-exec" {
     inline = [
-      "sudo mkdir -p /var/chef/cache"
+      "sudo mkdir -p /var/chef/cache",
+      "sudo chown ubuntu /var/chef"
     ]
     connection {
       type        = "ssh"
