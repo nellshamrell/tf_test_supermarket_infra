@@ -22,4 +22,20 @@ resource "aws_instance" "chef-server" {
       private_key = "${file(\"${var.private_ssh_key_path}\")}"
     }
   }
+
+  provisioner "file" {
+    source = "${path.module}/cookbooks"
+    destination = "~/"
+    connection {
+      type = "ssh"
+      user = "ubuntu"
+      private_key = "${file(\"${var.private_ssh_key_path}\")}"
+    }
+
+    connection {
+      type = "ssh"
+      user = "ubuntu"
+      private_key = "${file(\"${var.private_ssh_key_path}\")}"
+    }
+  }
 }
