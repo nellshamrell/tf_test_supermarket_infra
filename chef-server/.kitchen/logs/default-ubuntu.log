@@ -1,5 +1,0 @@
-I, [2016-09-19T16:50:41.272447 #70095]  INFO -- default-ubuntu: -----> Verifying <default-ubuntu>...
-I, [2016-09-19T16:50:41.294550 #70095]  INFO -- default-ubuntu: ec2-52-87-216-185.compute-1.amazonaws.com
-I, [2016-09-19T16:50:41.308922 #70095]  INFO -- default-ubuntu: Verifying group: default; current host ec2-52-87-216-185.compute-1.amazonaws.com
-I, [2016-09-19T16:50:43.831934 #70095]  INFO -- default-ubuntu: Use `/Users/nshamrell/Projects/tf_test_supermarket_infra/chef-server/test/integration/default` for testing
-I, [2016-09-19T16:50:44.055427 #70095]  INFO -- default-ubuntu: Finished verifying <default-ubuntu> (0m2.78s).
