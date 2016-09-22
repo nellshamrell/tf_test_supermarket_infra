@@ -1,0 +1,31 @@
+---
+driver:
+  name: terraform
+
+provisioner:
+  name: terraform
+  variable_files:
+    - terraform.tfvars
+
+platforms:
+  - name: ubuntu
+
+transport:
+  name: ssh
+  ssh_key: ~/.aws/nshamrell-staging.pem
+
+verifier:
+  name: terraform
+  format: doc
+  groups:
+  - name: default
+    tests:
+      - supermarket_server
+    hostnames: supermarket_server_hostname
+    username: ubuntu
+
+
+suites:
+  - name: default
+    run_list:
+    attributes:
