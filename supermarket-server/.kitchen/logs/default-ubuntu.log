@@ -1,0 +1,29 @@
+I, [2016-09-23T11:19:57.507536 #5694]  INFO -- default-ubuntu: -----> Destroying <default-ubuntu>...
+I, [2016-09-23T11:19:57.613634 #5694]  INFO -- default-ubuntu: Refreshing Terraform state prior to plan...
+I, [2016-09-23T11:19:57.613735 #5694]  INFO -- default-ubuntu: 
+I, [2016-09-23T11:19:58.075941 #5694]  INFO -- default-ubuntu: [0m[1maws_instance.supermarket-server: Refreshing state... (ID: i-449ed0bc)[0m
+I, [2016-09-23T11:20:01.866433 #5694]  INFO -- default-ubuntu: 
+I, [2016-09-23T11:20:01.874179 #5694]  INFO -- default-ubuntu: The Terraform execution plan has been generated and is shown below.
+I, [2016-09-23T11:20:01.874288 #5694]  INFO -- default-ubuntu: Resources are shown in alphabetical order for quick scanning. Green resources
+I, [2016-09-23T11:20:01.874473 #5694]  INFO -- default-ubuntu: will be created (or destroyed and then created if an existing resource
+I, [2016-09-23T11:20:01.874505 #5694]  INFO -- default-ubuntu: exists), yellow resources are being changed in-place, and red resources
+I, [2016-09-23T11:20:01.874530 #5694]  INFO -- default-ubuntu: will be destroyed.
+I, [2016-09-23T11:20:01.874633 #5694]  INFO -- default-ubuntu: 
+I, [2016-09-23T11:20:01.874655 #5694]  INFO -- default-ubuntu: Your plan was also saved to the path below. Call the "apply" subcommand
+I, [2016-09-23T11:20:01.874812 #5694]  INFO -- default-ubuntu: with this plan file and Terraform will exactly execute this execution
+I, [2016-09-23T11:20:01.874848 #5694]  INFO -- default-ubuntu: plan.
+I, [2016-09-23T11:20:01.874879 #5694]  INFO -- default-ubuntu: 
+I, [2016-09-23T11:20:01.874997 #5694]  INFO -- default-ubuntu: Path: /Users/nshamrell/Projects/tf_test_supermarket_infra/supermarket-server/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfplan
+I, [2016-09-23T11:20:01.875034 #5694]  INFO -- default-ubuntu: 
+I, [2016-09-23T11:20:01.875054 #5694]  INFO -- default-ubuntu: [31m- aws_instance.supermarket-server
+I, [2016-09-23T11:20:01.875211 #5694]  INFO -- default-ubuntu: [0m[0m
+I, [2016-09-23T11:20:01.875240 #5694]  INFO -- default-ubuntu: [0m
+I, [2016-09-23T11:20:01.875262 #5694]  INFO -- default-ubuntu: [0m[1mPlan:[0m 0 to add, 0 to change, 1 to destroy.[0m
+I, [2016-09-23T11:20:02.381082 #5694]  INFO -- default-ubuntu: [0m[1maws_instance.supermarket-server: Destroying...[21m[0m
+I, [2016-09-23T11:20:12.381203 #5694]  INFO -- default-ubuntu: [0m[1maws_instance.supermarket-server: Still destroying... (10s elapsed)[21m[0m
+I, [2016-09-23T11:20:22.382408 #5694]  INFO -- default-ubuntu: [0m[1maws_instance.supermarket-server: Still destroying... (20s elapsed)[21m[0m
+I, [2016-09-23T11:20:32.383366 #5694]  INFO -- default-ubuntu: [0m[1maws_instance.supermarket-server: Still destroying... (30s elapsed)[21m[0m
+I, [2016-09-23T11:20:33.479206 #5694]  INFO -- default-ubuntu: [0m[1maws_instance.supermarket-server: Destruction complete[21m[0m
+I, [2016-09-23T11:20:33.480284 #5694]  INFO -- default-ubuntu: [0m[1m[32m
+I, [2016-09-23T11:20:33.480425 #5694]  INFO -- default-ubuntu: Apply complete! Resources: 0 added, 0 changed, 1 destroyed.[0m
+I, [2016-09-23T11:20:33.498345 #5694]  INFO -- default-ubuntu: Finished destroying <default-ubuntu> (0m35.99s).
