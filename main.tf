@@ -38,3 +38,24 @@ module "supermarket-server" {
 
   key_name = "${var.key_name}"
 }
+
+resource "null_resource" "supermarket_oc_id_setup" {
+  # Temporarily change ownership of /etc/opscode/chef-server.rb to ubuntu so we can edit it through ssh
+  provisioner "local-exec" {
+    command = "ssh -i ${var.private_ssh_key_path} ubuntu@${module.chef-server.chef_server_hostname} sudo chown ubuntu /etc/opscode/chef-server.rb "
+  }
+
+  provisioner "local-exec" {
+    command = <<EOT
+      ssh -i ${var.private_ssh_key_path} ubuntu@${module.chef-server.chef_server_hostname} 'echo \oc_id[\"applications\"] = { \"supermarket\" =\> { \"redirect_uri\" =\> \"https://${module.supermarket-server.supermarket_server_hostname}/auth/chef_oauth2/callback\" } } >> /etc/opscode/chef-server.rb'
+    EOT
+  }
+
+  provisioner "local-exec" {
+    command = "ssh -i ${var.private_ssh_key_path} ubuntu@${module.chef-server.chef_server_hostname} sudo chown root /etc/opscode/chef-server.rb "
+  }
+
+  provisioner "local-exec" {
+    command = "ssh -i ${var.private_ssh_key_path} ubuntu@${module.chef-server.chef_server_hostname} sudo chef-server-ctl reconfigure"
+  }
+}
