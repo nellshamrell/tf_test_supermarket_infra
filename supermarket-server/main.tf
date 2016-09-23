@@ -13,4 +13,17 @@ resource "aws_instance" "supermarket-server" {
   tags {
     Name = "supermarket-server"
   }
+
+  provisioner "remote-exec" {
+    inline = [
+      "wget https://packages.chef.io/stable/ubuntu/14.04/supermarket_2.8.25-1_amd64.deb",
+      "sudo dpkg -i supermarket_2.8.25-1_amd64.deb",
+      "sudo supermarket-ctl reconfigure"
+    ]
+    connection {
+      type        = "ssh"
+      user        = "ubuntu"
+      private_key = "${file(\"${var.private_ssh_key_path}\")}"
+    }
+  }
 }
