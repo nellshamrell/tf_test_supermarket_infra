@@ -36,13 +36,14 @@ module "supermarket-server" {
 
   vpc_security_group_ids = "${var.vpc_security_group_ids}"
 
+  private_ssh_key_path = "${var.private_ssh_key_path}"
   key_name = "${var.key_name}"
 }
 
-resource "null_resource" "supermarket_oc_id_setup" {
+resource "null_resource" "chef_server_oc_id_setup" {
   # Temporarily change ownership of /etc/opscode/chef-server.rb to ubuntu so we can edit it through ssh
   provisioner "local-exec" {
-    command = "ssh -i ${var.private_ssh_key_path} ubuntu@${module.chef-server.chef_server_hostname} sudo chown ubuntu /etc/opscode/chef-server.rb "
+    command = "ssh -oStrictHostKeyChecking=no -i ${var.private_ssh_key_path} ubuntu@${module.chef-server.chef_server_hostname} sudo chown ubuntu /etc/opscode/chef-server.rb "
   }
 
   provisioner "local-exec" {
