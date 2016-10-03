@@ -23,9 +23,16 @@ verifier:
       - oc_id_auth
     hostnames: chef_server_hostname
     username: ubuntu
-
+  - name: supermarket_server
+    tests:
+      - config
+    hostnames: supermarket_server_hostname
+    username: ubuntu
 
 suites:
   - name: chef_server
+    run_list:
+    attributes:
+  - name: supermarket_server
     run_list:
     attributes:
