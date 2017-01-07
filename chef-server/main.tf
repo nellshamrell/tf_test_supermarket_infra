@@ -4,7 +4,6 @@ provider "aws" {
   region = "${var.region}"
 }
 
-/*
 resource "template_file" "chef_bootstrap" {
   template = "${file("${path.module}/templates/chef_bootstrap.tpl")}"
    vars {
@@ -16,7 +15,6 @@ resource "template_file" "chef_bootstrap" {
      chef-server-org-full-name = "${var.chef-server-org-full-name}"
   }
 }
-*/
 
 resource "aws_instance" "chef-server" {
   ami             = "${var.ami}"
@@ -25,7 +23,6 @@ resource "aws_instance" "chef-server" {
   subnet_id       = "${var.subnet_id}"
   vpc_security_group_ids = ["${split(",", var.vpc_security_group_ids)}"]
 
-/*
   provisioner "remote-exec" {
     inline = [
       "sudo mkdir -p /var/chef/cache",
@@ -82,5 +79,4 @@ EOF
       private_key = "${file(var.private_ssh_key_path)}"
     }
   }
-*/
 }

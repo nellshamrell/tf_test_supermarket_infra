@@ -9,7 +9,7 @@
 
   },
   "dependencies": {
-
+    "compat_resource": ">= 12.10"
   },
   "recommendations": {
 
@@ -35,12 +35,14 @@
   "recipes": {
 
   },
-  "version": "0.18.4",
+  "version": "0.21.2",
   "source_url": "https://github.com/chef-cookbooks/chef-ingredient",
   "issues_url": "https://github.com/chef-cookbooks/chef-ingredient/issues",
   "privacy": false,
   "chef_versions": [
-
+    [
+      ">= 12.1"
+    ]
   ],
   "ohai_versions": [
 

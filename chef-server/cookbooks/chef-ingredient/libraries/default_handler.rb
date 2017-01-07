@@ -56,6 +56,7 @@ module ChefIngredient
         provider value_for_platform_family(
           'debian'  => Chef::Provider::Package::Dpkg,
           'rhel'    => Chef::Provider::Package::Rpm,
+          'suse'    => Chef::Provider::Package::Rpm,
           'windows' => Chef::Provider::Package::Windows
         )
         if new_resource.product_name == 'chef'
@@ -100,12 +101,11 @@ Check that the package exists.
       remote_artifact_path = artifact_info.url
       local_artifact_path = File.join(cache_path, ::File.basename(remote_artifact_path))
 
-      converge_by "Download #{new_resource.product_name} package from #{remote_artifact_path}\n" do
-        remote_file local_artifact_path do
-          source remote_artifact_path
-          mode '0644'
-          checksum installer.artifact_info.sha256
-        end
+      remote_file local_artifact_path do
+        source remote_artifact_path
+        mode '0644'
+        checksum installer.artifact_info.sha256
+        backup 1
       end
 
       configure_from_source_package(action_name, local_artifact_path)
