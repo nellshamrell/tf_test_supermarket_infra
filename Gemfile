@@ -2,4 +2,4 @@ source 'https://rubygems.org/'
 ruby '2.3.1'
 
 gem 'test-kitchen'
-gem 'kitchen-terraform'
+gem 'kitchen-terraform', '~> 0.4'

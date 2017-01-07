@@ -12,7 +12,7 @@ platforms:
 
 transport:
   name: ssh
-  ssh_key: ~/.aws/nshamrell-staging.pem
+  ssh_key: ~/.aws/nshamrell.pem
 
 verifier:
   name: terraform

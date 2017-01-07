@@ -14,6 +14,7 @@ resource "aws_instance" "supermarket-server" {
     Name = "supermarket-server"
   }
 
+/*
   provisioner "remote-exec" {
     inline = [
       "sudo apt-get install apt-transport-https",
@@ -27,7 +28,8 @@ resource "aws_instance" "supermarket-server" {
     connection {
       type        = "ssh"
       user        = "ubuntu"
-      private_key = "${file(\"${var.private_ssh_key_path}\")}"
+      private_key = "${file(var.private_ssh_key_path)}"
     }
   }
+*/
 }
